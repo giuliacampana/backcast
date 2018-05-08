@@ -1,8 +1,8 @@
 var VideoListEntryView = Backbone.View.extend({
 
   initialize: function() {
-    console.log('VideoListEntryView ' + VideoListEntryView);
-    this.on('select:trigger', this.render(), this);
+    this.on('select:trigger', this.render, this);
+    
   },
 
   events: {

@@ -6,7 +6,6 @@
   "license": "UNLICENSED",
   "private": true,
   "scripts": {
-    // "start": "live-server",
     "test": "open SpecRunner.html",
     "postinstall": "curl -s https://raw.githubusercontent.com/reactorcore/pomander/master/bin/install | bash"
   },
