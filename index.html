@@ -24,13 +24,15 @@
 
   <script src="src/views/app.js"></script>
   <script src="src/views/search.js"></script>
+  <script src="src/data/exampleVideoData.js"></script>
   <script src="src/views/videoList.js"></script>
   <script src="src/views/videoListEntry.js"></script>
   <script src="src/views/videoPlayer.js"></script>
 
   <script>
     backboneReady(() => {
-      new AppView();
+      var app = new AppView();
+      app.render();
     });
   </script>
 
