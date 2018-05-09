@@ -3,13 +3,16 @@ var AppView = Backbone.View.extend({
   el: '#app',
 
   initialize: function() {
-    this.videos = new Videos(window.exampleVideoData);
+    this.videos = new Videos();
     this.listenTo(this.videos, 'sync', this.firstSearch);
+    this.videos.search('javascript');
     this.render();
   },
   
   firstSearch: function() {
-    this.videos.at(0).select();
+    if (this.videos.length > 0) {
+      this.videos.at(0).select();
+    }
   },
 
   render: function() {
@@ -28,6 +31,7 @@ var AppView = Backbone.View.extend({
 
     new VideoPlayerView({
       el: this.$('.player'),
+      model: this.videos.at(0),
       collection: this.videos
     }).render();
  
